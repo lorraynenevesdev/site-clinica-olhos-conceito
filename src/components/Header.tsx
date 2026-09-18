@@ -26,11 +26,11 @@ export default function Header() {
               width={430}
               height={512}
             />
-            <span className="leading-none font-display">
-              <span className="block text-[1.05rem] font-semibold text-brand-navy">
+            <span className="font-display leading-[1.15]">
+              <span className="block text-base text-brand-navy">
                 Clínica de Olhos
               </span>
-              <span className="block text-[1.05rem] font-semibold text-brand-green-dark -mt-0.5">
+              <span className="block text-base text-brand-green-dark">
                 Conceito
               </span>
             </span>

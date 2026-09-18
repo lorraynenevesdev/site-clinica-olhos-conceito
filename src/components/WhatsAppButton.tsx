@@ -30,7 +30,7 @@ export default function WhatsAppButton({
       href={buildWhatsappLink(mensagem)}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-base font-semibold transition-colors min-h-11 ${variantClasses[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-base font-medium transition-colors min-h-11 ${variantClasses[variant]} ${className}`}
     >
       {showIcon && <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />}
       <span>{children}</span>

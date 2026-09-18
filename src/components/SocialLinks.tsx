@@ -1,11 +1,10 @@
-import { Camera, ThumbsUp, MessageCircle } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 import { redesSociais } from "../config/clinic";
+import { InstagramIcon, WhatsAppIcon, FacebookIcon } from "./SocialIcons";
 
-const icons: Record<string, LucideIcon> = {
-  instagram: Camera,
-  facebook: ThumbsUp,
-  whatsapp: MessageCircle,
+const icons = {
+  instagram: InstagramIcon,
+  facebook: FacebookIcon,
+  whatsapp: WhatsAppIcon,
 };
 
 type Props = {
@@ -16,9 +15,9 @@ export default function SocialLinks({ className = "" }: Props) {
   if (redesSociais.length === 0) return null;
 
   return (
-    <ul className={`flex items-center gap-3 ${className}`}>
+    <ul className={`flex items-center gap-2 ${className}`}>
       {redesSociais.map((rede) => {
-        const Icon = icons[rede.id] ?? Camera;
+        const Icon = icons[rede.id] ?? InstagramIcon;
         return (
           <li key={rede.id}>
             <a
@@ -26,9 +25,9 @@ export default function SocialLinks({ className = "" }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={rede.label}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-brand-turquoise to-brand-blue text-white hover:opacity-90 transition-opacity"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-navy/15 text-brand-navy/70 hover:border-brand-green-dark hover:text-brand-green-dark transition-colors"
             >
-              <Icon className="h-5 w-5" aria-hidden="true" />
+              <Icon className="h-5 w-5" />
             </a>
           </li>
         );

@@ -6,9 +6,9 @@ export default function Location() {
   const confirmadas = unidades.filter((u) => u.confirmada);
 
   return (
-    <section id="localizacao" className="py-14 md:py-20 bg-white">
+    <section id="localizacao" className="py-20 md:py-28 bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="rounded-3xl border border-brand-navy/10 bg-brand-bg p-6 sm:p-10">
+        <div className="rounded-3xl border border-brand-navy/10 bg-brand-bg p-7 sm:p-12">
           <div className="text-center">
             <div className="flex justify-center">
               <span className="eyebrow">Como chegar</span>
@@ -86,7 +86,7 @@ export default function Location() {
                         href={mapsSearchUrl(unidade.endereco)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-white bg-brand-blue hover:bg-brand-navy transition-colors min-h-11 w-full"
+                        className="flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-medium text-white bg-brand-blue hover:bg-brand-navy transition-colors min-h-11 w-full"
                       >
                         Como chegar
                       </a>

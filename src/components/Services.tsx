@@ -18,7 +18,7 @@ const alts: Record<string, string> = {
 
 export default function Services() {
   return (
-    <section id="atendimentos" className="py-14 md:py-20 bg-white">
+    <section id="atendimentos" className="py-20 md:py-28 bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 max-w-3xl md:max-w-none">
           <div>
@@ -29,7 +29,7 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="mt-10 md:mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {atendimentos.map((item) => (
             <div
               key={item.id}
@@ -46,7 +46,7 @@ export default function Services() {
                   {item.legendaFoto}
                 </span>
               </div>
-              <div className="p-5 flex flex-col flex-1">
+              <div className="p-6 flex flex-col flex-1">
                 <h3 className="font-display text-lg text-brand-navy">
                   {item.titulo}
                 </h3>
@@ -66,7 +66,7 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-brand-navy/10 bg-brand-bg p-6 sm:p-8">
+        <div className="mt-14 rounded-2xl border border-brand-navy/10 bg-brand-bg p-7 sm:p-10">
           <h3 className="font-display text-lg sm:text-xl text-brand-navy">
             Exames realizados na clínica
           </h3>

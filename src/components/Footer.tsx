@@ -9,8 +9,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-white border-t border-brand-navy/10">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
-        <div className="grid sm:grid-cols-3 gap-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+        <div className="grid sm:grid-cols-3 gap-10 sm:gap-8">
           <div>
             <div className="flex items-center gap-3">
               <img

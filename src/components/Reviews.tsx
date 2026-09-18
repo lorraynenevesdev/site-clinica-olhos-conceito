@@ -5,7 +5,7 @@ export default function Reviews() {
   if (!avaliacoesVisiveis || avaliacoes.length === 0) return null;
 
   return (
-    <section id="avaliacoes" className="py-14 md:py-20 bg-brand-bg">
+    <section id="avaliacoes" className="py-20 md:py-28 bg-brand-bg">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center max-w-xl mx-auto">
           <div className="flex justify-center">
@@ -39,7 +39,7 @@ export default function Reviews() {
           </p>
         </div>
 
-        <div className="mt-10 md:mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {avaliacoes.map((avaliacao) => (
             <blockquote
               key={avaliacao.id}

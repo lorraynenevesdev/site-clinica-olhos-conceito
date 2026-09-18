@@ -4,7 +4,7 @@ import pediatricoFoto from "../assets/photos/pediatrico.webp";
 
 export default function PediatricHighlight() {
   return (
-    <section className="relative overflow-hidden bg-brand-bg-mint py-14 md:py-20">
+    <section className="relative overflow-hidden bg-brand-bg-mint py-20 md:py-28">
       <div
         aria-hidden="true"
         className="deco-arc h-64 w-64 -top-20 -left-20 border-brand-turquoise/20 border-[24px]"

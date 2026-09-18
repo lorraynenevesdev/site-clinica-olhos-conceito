@@ -43,7 +43,12 @@ export type RedeSocial = {
  * ausentes simplesmente não aparecem no rodapé.
  */
 export const redesSociais: RedeSocial[] = [
-  { id: "instagram", label: "Instagram", url: instagram.url },
+  { id: "instagram", label: "Instagram da clínica", url: instagram.url },
+  {
+    id: "whatsapp",
+    label: "WhatsApp da clínica",
+    url: `https://wa.me/${whatsapp.numero}`,
+  },
 ];
 
 export const clinicInfo = {

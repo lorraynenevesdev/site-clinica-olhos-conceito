@@ -3,7 +3,7 @@ import { whatsapp } from "../config/clinic";
 
 export default function FinalCta() {
   return (
-    <section className="py-14 md:py-20 bg-brand-green-dark">
+    <section className="py-20 md:py-28 bg-brand-green-dark">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 text-center">
         <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-white">
           Vamos cuidar da sua <span className="text-brand-bg-mint">visão</span>?
