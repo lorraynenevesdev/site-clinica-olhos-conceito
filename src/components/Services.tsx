@@ -1,4 +1,4 @@
-import { atendimentos, exames } from "../config/clinic";
+import { atendimentos, exames, whatsapp } from "../config/clinic";
 import WhatsAppButton from "./WhatsAppButton";
 import Reveal from "./Reveal";
 import consultaFoto from "../assets/photos/consulta.webp";
@@ -68,23 +68,45 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-2xl border border-brand-navy/10 bg-brand-bg p-7 sm:p-10">
-          <h3 className="font-display text-lg sm:text-xl text-brand-navy">
-            Exames realizados na clínica
-          </h3>
-          <ul className="mt-5 flex flex-wrap gap-2">
+        <div className="mt-16 rounded-2xl border border-brand-navy/10 bg-brand-bg p-7 sm:p-10">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <h3 className="font-display text-xl sm:text-2xl text-brand-navy">
+              Exames realizados na clínica
+            </h3>
+            <WhatsAppButton
+              mensagem={whatsapp.mensagens.exames}
+              variant="secondary"
+              showIcon={false}
+              className="shrink-0 !px-5 !py-2.5 text-sm"
+            >
+              Tirar dúvidas sobre exames
+            </WhatsAppButton>
+          </div>
+
+          <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
             {exames.map((exame) => (
               <li
-                key={exame}
-                className="rounded-full bg-white border border-brand-navy/10 px-4 py-2 text-sm text-brand-text/90"
+                key={exame.nome}
+                className="border-t border-brand-navy/10 pt-4"
               >
-                {exame}
+                <p className="text-sm font-medium text-brand-navy">
+                  {exame.nome}
+                </p>
+                <p className="mt-1.5 text-sm leading-relaxed text-brand-text/65">
+                  {exame.descricao ?? (
+                    <span className="italic text-brand-text/45">
+                      Consulte a recepção para detalhes.
+                    </span>
+                  )}
+                </p>
               </li>
             ))}
           </ul>
-          <p className="mt-5 text-xs sm:text-sm text-brand-text/55 max-w-2xl">
-            A disponibilidade pode variar. Confirme com a recepção pelo
-            WhatsApp antes da sua visita.
+
+          <p className="mt-8 text-xs sm:text-sm text-brand-text/55 max-w-2xl">
+            As descrições são informativas e não substituem a avaliação
+            médica. A disponibilidade pode variar — confirme com a recepção
+            pelo WhatsApp antes da sua visita.
           </p>
         </div>
       </div>

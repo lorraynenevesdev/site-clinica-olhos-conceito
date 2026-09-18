@@ -144,21 +144,60 @@ export const atendimentos: Atendimento[] = [
   },
 ];
 
+export type Exame = {
+  nome: string;
+  /**
+   * Descrição neutra do que o exame observa. Deve dizer apenas o que é
+   * avaliado — nunca preparo, indicação clínica, resultado esperado ou
+   * qualquer orientação que caiba ao médico. Deixe indefinida quando o
+   * significado do item ainda não tiver sido confirmado pela clínica.
+   */
+  descricao?: string;
+};
+
 /**
  * Exames divulgados pela própria clínica em publicação no Instagram
  * oficial. A disponibilidade pode mudar — o site orienta a confirmar com
  * a recepção antes da visita.
  */
-export const exames = [
-  "Topografia de córnea",
-  "Mapeamento de retina",
-  "Refração computadorizada",
-  "Gonioscopia",
-  "Pressão ocular",
-  "Fundo de olho",
-  "Biomicroscopia",
-  "Paquimetria",
-  "CDPO",
+export const exames: Exame[] = [
+  {
+    nome: "Topografia de córnea",
+    descricao: "Mapeia a curvatura e o formato da superfície da córnea.",
+  },
+  {
+    nome: "Mapeamento de retina",
+    descricao: "Examina a retina e as estruturas do fundo do olho.",
+  },
+  {
+    nome: "Refração computadorizada",
+    descricao: "Mede o grau de forma automatizada, como apoio à consulta.",
+  },
+  {
+    nome: "Gonioscopia",
+    descricao: "Avalia o ângulo de drenagem interno do olho.",
+  },
+  {
+    nome: "Pressão ocular",
+    descricao: "Mede a pressão interna do olho (tonometria).",
+  },
+  {
+    nome: "Fundo de olho",
+    descricao: "Observa a retina, o nervo óptico e os vasos do fundo do olho.",
+  },
+  {
+    nome: "Biomicroscopia",
+    descricao: "Observa as estruturas do olho na lâmpada de fenda.",
+  },
+  {
+    nome: "Paquimetria",
+    descricao: "Mede a espessura da córnea.",
+  },
+  {
+    // Sigla divulgada pela clínica; o significado ainda não foi confirmado,
+    // por isso segue sem descrição em vez de receber uma suposição.
+    nome: "CDPO",
+  },
 ];
 
 export type MembroEquipe = {
@@ -262,6 +301,8 @@ export const pendencias = [
   "Confirmar horários de funcionamento das duas unidades (Centro e Florença).",
   "Fornecer o telefone da unidade Centro (hoje só a unidade Florença tem telefone publicado).",
   "Confirmar se a lista de exames divulgada no Instagram segue atual.",
+  "Confirmar o significado da sigla CDPO para descrevê-la no site (hoje aparece sem descrição).",
+  "Validar com a responsabilidade técnica as descrições dos exames exibidas no site.",
   "Substituir as fotos de banco de imagens (abertura, cartões de atendimento e destaque infantil) por fotografias reais da clínica, equipamentos e equipe.",
   "Fornecer fotos reais do ambiente da clínica (seção 'A clínica').",
   "Confirmar equipe médica atual (nomes, fotos, CRM/UF e RQE).",

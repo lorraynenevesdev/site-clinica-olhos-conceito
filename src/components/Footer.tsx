@@ -3,6 +3,13 @@ import { clinicInfo, instagram, unidades } from "../config/clinic";
 import SocialLinks from "./SocialLinks";
 import logo from "../assets/logo-conceito.png";
 
+const navItems = [
+  { label: "A clínica", href: "#a-clinica" },
+  { label: "Atendimentos", href: "#atendimentos" },
+  { label: "Localização", href: "#localizacao" },
+  { label: "Dúvidas", href: "#duvidas" },
+];
+
 export default function Footer() {
   const confirmadas = unidades.filter((u) => u.confirmada);
 
@@ -24,46 +31,58 @@ export default function Footer() {
                 {clinicInfo.nome}
               </p>
             </div>
-            <p className="mt-2 text-sm text-brand-text/70">
-              {clinicInfo.cidade}
-            </p>
-          </div>
 
-          <div>
-            <p className="text-sm font-semibold text-brand-navy">
-              Acompanhe a clínica
-            </p>
             <a
               href={instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-1 inline-block text-xs text-brand-text/60 hover:text-brand-green-dark transition-colors"
+              className="mt-5 inline-block text-sm text-brand-text/60 hover:text-brand-green-dark transition-colors"
             >
               {instagram.handle}
             </a>
             <SocialLinks className="mt-3" />
           </div>
 
+          <nav aria-label="Navegação do rodapé">
+            <p className="text-sm font-medium text-brand-navy">Navegação</p>
+            <ul className="mt-4 space-y-1">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="flex min-h-11 items-center text-sm text-brand-text/75 hover:text-brand-green-dark transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
           <div>
-            <p className="text-sm font-semibold text-brand-navy">
-              Localização
-            </p>
+            <p className="text-sm font-medium text-brand-navy">Localização</p>
             {confirmadas.length === 0 ? (
-              <p className="mt-3 text-sm text-brand-text/70 leading-relaxed">
+              <p className="mt-4 text-sm text-brand-text/70 leading-relaxed">
                 Fale com nossa equipe para confirmar a unidade e receber
                 orientações de chegada.
               </p>
             ) : (
-              <ul className="mt-3 space-y-3">
+              <ul className="mt-4 space-y-4">
                 {confirmadas.map((u) => (
-                  <li key={u.id} className="text-sm text-brand-text/80">
-                    <span className="flex items-start gap-2">
-                      <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-brand-green-dark" aria-hidden="true" />
+                  <li key={u.id} className="text-sm text-brand-text/75">
+                    <span className="flex items-start gap-2 leading-relaxed">
+                      <MapPin
+                        className="h-4 w-4 mt-0.5 shrink-0 text-brand-green-dark"
+                        aria-hidden="true"
+                      />
                       {u.endereco}
                     </span>
                     {u.telefone && (
                       <span className="flex items-center gap-2 mt-1">
-                        <Phone className="h-4 w-4 shrink-0 text-brand-green-dark" aria-hidden="true" />
+                        <Phone
+                          className="h-4 w-4 shrink-0 text-brand-green-dark"
+                          aria-hidden="true"
+                        />
                         <a
                           href={`tel:${u.telefone.replace(/\D/g, "")}`}
                           className="hover:text-brand-green-dark transition-colors"
@@ -79,7 +98,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-brand-navy/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="mt-12 pt-6 border-t border-brand-navy/10 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-brand-text/50">
             © {new Date().getFullYear()} {clinicInfo.nome}. Todos os direitos
             reservados.
