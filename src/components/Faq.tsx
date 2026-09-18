@@ -6,7 +6,7 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="duvidas" className="py-16 md:py-24 bg-white">
+    <section id="duvidas" className="py-14 md:py-20 bg-brand-bg">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy text-center tracking-tight">
           Perguntas frequentes

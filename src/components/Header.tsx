@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { clinicInfo } from "../config/clinic";
-import WhatsAppButton from "./WhatsAppButton";
 import { whatsapp } from "../config/clinic";
+import WhatsAppButton from "./WhatsAppButton";
 
 const navItems = [
   { label: "A clínica", href: "#a-clinica" },
@@ -17,12 +16,14 @@ export default function Header() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-brand-navy/10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex h-16 items-center justify-between">
-          <a
-            href="#topo"
-            className="text-lg font-extrabold text-brand-navy tracking-tight"
-          >
-            {clinicInfo.nome}
+        <div className="flex h-20 items-center justify-between">
+          <a href="#topo" className="leading-tight">
+            <span className="block text-base font-extrabold text-brand-navy tracking-tight">
+              Clínica de Olhos
+            </span>
+            <span className="block text-base font-extrabold text-brand-green-dark tracking-tight -mt-0.5">
+              Conceito
+            </span>
           </a>
 
           <nav

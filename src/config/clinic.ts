@@ -80,11 +80,15 @@ export type Atendimento = {
   titulo: string;
   descricao: string;
   mensagemWhatsapp: string;
+  /** Legenda discreta indicando que a foto é ilustrativa, não da equipe da clínica */
+  legendaFoto: string;
 };
 
 /**
  * Itens preliminares — a confirmar com a clínica antes da publicação.
- * Não representam lista oficial/completa de serviços.
+ * Não representam lista oficial/completa de serviços. As fotos usadas
+ * são ilustrativas (banco de imagens fornecido como referência) e não
+ * retratam pacientes ou profissionais reais da clínica.
  */
 export const atendimentos: Atendimento[] = [
   {
@@ -93,6 +97,7 @@ export const atendimentos: Atendimento[] = [
     descricao:
       "Avaliação com nossa equipe para conversar sobre a saúde da sua visão e orientações gerais.",
     mensagemWhatsapp: whatsapp.mensagens.padrao,
+    legendaFoto: "Imagem ilustrativa",
   },
   {
     id: "pediatrica",
@@ -100,6 +105,7 @@ export const atendimentos: Atendimento[] = [
     descricao:
       "Atendimento voltado ao público infantil, com acompanhamento próximo da família.",
     mensagemWhatsapp: whatsapp.mensagens.infantil,
+    legendaFoto: "Imagem ilustrativa",
   },
   {
     id: "exames",
@@ -107,6 +113,7 @@ export const atendimentos: Atendimento[] = [
     descricao:
       "Fale com a equipe para saber quais exames estão disponíveis e como se preparar.",
     mensagemWhatsapp: whatsapp.mensagens.exames,
+    legendaFoto: "Imagem ilustrativa",
   },
 ];
 
@@ -189,7 +196,8 @@ export const pendencias = [
   "Confirmar número de WhatsApp oficial (5531995959990).",
   "Confirmar unidade(s) ativa(s) e respectivos horários de funcionamento.",
   "Confirmar telefone fixo da unidade Florença.",
-  "Fornecer fotos reais do ambiente da clínica.",
+  "Substituir as fotos de banco de imagens (abertura, cartões de atendimento e destaque infantil) por fotografias reais da clínica, equipamentos e equipe.",
+  "Fornecer fotos reais do ambiente da clínica (seção 'A clínica').",
   "Fornecer logo oficial em arquivo vetorial/alta resolução (se houver).",
   "Confirmar equipe médica atual (nomes, fotos, CRM/UF e RQE).",
   "Fornecer avaliações reais aprovadas para publicação e link do perfil no Google.",

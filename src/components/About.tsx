@@ -2,7 +2,7 @@ import { Building2 } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="a-clinica" className="py-16 md:py-24 bg-white">
+    <section id="a-clinica" className="py-14 md:py-20 bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>

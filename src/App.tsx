@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import QuickLinks from "./components/QuickLinks";
 import Services from "./components/Services";
 import About from "./components/About";
+import PediatricHighlight from "./components/PediatricHighlight";
 import Team from "./components/Team";
 import Reviews from "./components/Reviews";
 import Location from "./components/Location";
@@ -20,6 +21,7 @@ export default function App() {
         <QuickLinks />
         <Services />
         <About />
+        <PediatricHighlight />
         <Team />
         <Reviews />
         <Location />
