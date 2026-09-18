@@ -66,13 +66,18 @@ export const unidades: Unidade[] = [
     endereco: "Rua Raimundo Nonato de Souza, 26 — Centro, Ribeirão das Neves/MG",
     telefone: undefined,
     horarioTexto: undefined,
-    confirmada: false,
+    confirmada: true,
     fonte: "Instagram (@clinicasdeolhosconceito)",
   },
 ];
 
 export function mapsSearchUrl(endereco: string): string {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(endereco)}`;
+}
+
+/** URL de incorporação (iframe) do Google Maps para um endereço, sem necessidade de chave de API. */
+export function mapsEmbedUrl(endereco: string): string {
+  return `https://www.google.com/maps?q=${encodeURIComponent(endereco)}&output=embed`;
 }
 
 export type Atendimento = {
@@ -194,8 +199,9 @@ export const faq = [
  */
 export const pendencias = [
   "Confirmar número de WhatsApp oficial (5531995959990).",
-  "Confirmar unidade(s) ativa(s) e respectivos horários de funcionamento.",
-  "Confirmar telefone fixo da unidade Florença.",
+  "Confirmar horário de funcionamento da unidade Centro.",
+  "Fornecer telefone da unidade Centro.",
+  "Confirmar se a unidade Florença (Google) também está ativa e, se sim, seu telefone fixo.",
   "Substituir as fotos de banco de imagens (abertura, cartões de atendimento e destaque infantil) por fotografias reais da clínica, equipamentos e equipe.",
   "Fornecer fotos reais do ambiente da clínica (seção 'A clínica').",
   "Fornecer logo oficial em arquivo vetorial/alta resolução (se houver).",

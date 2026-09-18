@@ -1,5 +1,5 @@
 import { MapPin, Phone, Clock } from "lucide-react";
-import { unidades, mapsSearchUrl, whatsapp } from "../config/clinic";
+import { unidades, mapsSearchUrl, mapsEmbedUrl, whatsapp } from "../config/clinic";
 import WhatsAppButton from "./WhatsAppButton";
 
 export default function Location() {
@@ -26,42 +26,60 @@ export default function Location() {
               </div>
             </div>
           ) : (
-            <div className="mt-8 grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div
+              className={`mt-8 grid gap-6 mx-auto ${
+                confirmadas.length > 1
+                  ? "sm:grid-cols-2 max-w-4xl"
+                  : "max-w-xl"
+              }`}
+            >
               {confirmadas.map((unidade) => (
                 <div
                   key={unidade.id}
-                  className="rounded-2xl bg-white border border-brand-navy/10 p-6"
+                  className="rounded-2xl bg-white border border-brand-navy/10 overflow-hidden"
                 >
-                  <h3 className="text-lg font-bold text-brand-navy flex items-center gap-2">
-                    <MapPin className="h-5 w-5 text-brand-green-dark shrink-0" aria-hidden="true" />
-                    {unidade.nome}
-                  </h3>
-                  <p className="mt-3 text-sm text-brand-text/90 leading-relaxed">
-                    {unidade.endereco}
-                  </p>
+                  <div className="aspect-[4/3] w-full">
+                    <iframe
+                      title={`Mapa de localização — ${unidade.nome}`}
+                      src={mapsEmbedUrl(unidade.endereco)}
+                      className="h-full w-full border-0"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  </div>
 
-                  {unidade.telefone && (
-                    <p className="mt-2 flex items-center gap-2 text-sm text-brand-text/90">
-                      <Phone className="h-4 w-4 text-brand-green-dark shrink-0" aria-hidden="true" />
-                      {unidade.telefone}
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold text-brand-navy flex items-center gap-2">
+                      <MapPin className="h-5 w-5 text-brand-green-dark shrink-0" aria-hidden="true" />
+                      {unidade.nome}
+                    </h3>
+                    <p className="mt-3 text-sm text-brand-text/90 leading-relaxed">
+                      {unidade.endereco}
                     </p>
-                  )}
 
-                  {unidade.horarioTexto && (
-                    <p className="mt-2 flex items-center gap-2 text-sm text-brand-text/90">
-                      <Clock className="h-4 w-4 text-brand-green-dark shrink-0" aria-hidden="true" />
-                      {unidade.horarioTexto}
-                    </p>
-                  )}
+                    {unidade.telefone && (
+                      <p className="mt-2 flex items-center gap-2 text-sm text-brand-text/90">
+                        <Phone className="h-4 w-4 text-brand-green-dark shrink-0" aria-hidden="true" />
+                        {unidade.telefone}
+                      </p>
+                    )}
 
-                  <a
-                    href={mapsSearchUrl(unidade.endereco)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-white bg-brand-blue hover:bg-brand-navy transition-colors min-h-11 w-full"
-                  >
-                    Como chegar
-                  </a>
+                    {unidade.horarioTexto && (
+                      <p className="mt-2 flex items-center gap-2 text-sm text-brand-text/90">
+                        <Clock className="h-4 w-4 text-brand-green-dark shrink-0" aria-hidden="true" />
+                        {unidade.horarioTexto}
+                      </p>
+                    )}
+
+                    <a
+                      href={mapsSearchUrl(unidade.endereco)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-5 inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-white bg-brand-blue hover:bg-brand-navy transition-colors min-h-11 w-full"
+                    >
+                      Como chegar
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
