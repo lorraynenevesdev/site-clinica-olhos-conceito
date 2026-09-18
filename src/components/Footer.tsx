@@ -1,7 +1,7 @@
-import { Camera, MapPin, Phone } from "lucide-react";
-import { clinicInfo, instagram, unidades } from "../config/clinic";
+import { MapPin, Phone } from "lucide-react";
+import { clinicInfo, instagram, unidades, whatsapp } from "../config/clinic";
 import WhatsAppButton from "./WhatsAppButton";
-import { whatsapp } from "../config/clinic";
+import SocialLinks from "./SocialLinks";
 
 export default function Footer() {
   const confirmadas = unidades.filter((u) => u.confirmada);
@@ -31,22 +31,10 @@ export default function Footer() {
             <p className="text-sm font-semibold text-brand-navy">
               Acompanhe a clínica
             </p>
-            <a
-              href={instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-3 rounded-2xl border border-brand-navy/10 px-4 py-3 text-sm font-semibold text-brand-navy hover:border-brand-turquoise hover:text-brand-green-dark transition-colors min-h-11"
-            >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-turquoise to-brand-blue text-white">
-                <Camera className="h-4 w-4" aria-hidden="true" />
-              </span>
-              <span>
-                Siga no Instagram
-                <span className="block text-xs font-normal text-brand-text/60">
-                  {instagram.handle}
-                </span>
-              </span>
-            </a>
+            <p className="mt-1 text-xs text-brand-text/60">
+              {instagram.handle}
+            </p>
+            <SocialLinks className="mt-3" />
           </div>
 
           <div>

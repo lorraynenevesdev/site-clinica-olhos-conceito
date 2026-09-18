@@ -28,7 +28,7 @@ export default function Hero() {
               <br />
               para cuidar da
               <br />
-              sua visão.
+              sua <span className="text-brand-green-dark">visão</span>.
             </h1>
             <p className="mt-5 text-base sm:text-lg text-brand-text/85 leading-relaxed max-w-md">
               Atendimento oftalmológico em Ribeirão das Neves. Solicite seu

@@ -24,7 +24,7 @@ export default function Services() {
           <div>
             <span className="eyebrow">Atendimentos</span>
             <h2 className="font-display mt-3 text-2xl sm:text-3xl md:text-4xl text-brand-navy max-w-xl">
-              Cuidado com a visão em cada fase da vida.
+              Cuidado com a visão em <span className="text-brand-green-dark">cada fase</span> da vida.
             </h2>
           </div>
         </div>

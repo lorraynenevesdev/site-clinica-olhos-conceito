@@ -29,6 +29,21 @@ export const instagram = {
   handle: "@clinicasdeolhosconceito",
 };
 
+export type RedeSocial = {
+  id: "instagram" | "facebook" | "whatsapp";
+  label: string;
+  url: string;
+};
+
+/**
+ * Redes sociais confirmadas para exibição em botões de ícone. Adicione um
+ * item aqui apenas quando o link for real e confirmado — links vazios ou
+ * ausentes simplesmente não aparecem no rodapé.
+ */
+export const redesSociais: RedeSocial[] = [
+  { id: "instagram", label: "Instagram", url: instagram.url },
+];
+
 export const clinicInfo = {
   nome: "Clínica de Olhos Conceito",
   cidade: "Ribeirão das Neves/MG",
@@ -149,20 +164,42 @@ export type Avaliacao = {
 };
 
 /**
- * SEÇÃO CONDICIONAL — mantida oculta (avaliacoesVisiveis = false) até
- * receber conteúdo aprovado para publicação e o link correto do perfil
- * no Google. A nota/quantidade abaixo refletem apenas uma captura de
- * tela pontual e NÃO devem ser exibidas como dado atualizado
- * automaticamente.
+ * Avaliações reais, reunidas a partir de capturas de tela do Google
+ * fornecidas pela clínica para publicação. A nota/quantidade abaixo
+ * refletem uma captura pontual e NÃO são atualizadas automaticamente —
+ * atualize periodicamente com a equipe e, assim que possível, troque
+ * `linkGoogle` pelo link real do perfil da clínica no Google.
  */
-export const avaliacoesVisiveis = false;
+export const avaliacoesVisiveis = true;
 export const avaliacoesResumo = {
   nota: 4.0,
   totalAvaliacoes: 13,
-  fonteTexto: "Referente a uma captura de tela do Google (data não confirmada)",
+  fonteTexto: "Com base em avaliações reunidas pela equipe no Google",
   linkGoogle: "",
 };
-export const avaliacoes: Avaliacao[] = [];
+export const avaliacoes: Avaliacao[] = [
+  {
+    id: "paula-silva",
+    autor: "Paula Silva",
+    texto:
+      "Excelente atendimento, levo sempre meus pais lá para acompanhamento, já fiz minha consulta também e gostei muito, agora vou levar minha filha pra consultar também! Estão todos de parabéns, excelente clínica, super recomendo.",
+    nota: 5,
+  },
+  {
+    id: "jean-carlo",
+    autor: "Jean Carlo",
+    texto:
+      "Descobri esta clínica há mais ou menos 2 anos e gostei muito, já levei minha mulher e filha e já marquei para minha mãe. Excelentes profissionais desde a recepção até os médicos. Nota 10.",
+    nota: 5,
+  },
+  {
+    id: "alice-rodrigues",
+    autor: "Alice Rodrigues",
+    texto:
+      "Foi uma das melhores experiências que já tive com oftalmologista, um serviço prestado com qualidade de verdade! A estrutura física do consultório é perfeita e impecável para o atendimento. Indico sempre.",
+    nota: 5,
+  },
+];
 
 export const faq = [
   {
@@ -206,7 +243,8 @@ export const pendencias = [
   "Fornecer fotos reais do ambiente da clínica (seção 'A clínica').",
   "Fornecer logo oficial em arquivo vetorial/alta resolução (se houver).",
   "Confirmar equipe médica atual (nomes, fotos, CRM/UF e RQE).",
-  "Fornecer avaliações reais aprovadas para publicação e link do perfil no Google.",
+  "Confirmar o link correto do perfil da clínica no Google e atualizar nota/total de avaliações periodicamente.",
+  "Confirmar link do Facebook (se houver) para exibir no rodapé junto ao Instagram.",
   "Confirmar lista oficial de atendimentos/exames e convênios aceitos.",
   "Fornecer dados do responsável técnico e razão social para o rodapé.",
   "Criar página de política de privacidade, se aplicável, antes de linkar no rodapé.",
