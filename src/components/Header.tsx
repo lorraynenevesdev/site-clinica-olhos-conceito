@@ -17,11 +17,11 @@ export default function Header() {
     <header className="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-b border-brand-navy/10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex h-20 items-center justify-between">
-          <a href="#topo" className="leading-tight">
-            <span className="block text-base font-extrabold text-brand-navy tracking-tight">
+          <a href="#topo" className="leading-none font-display">
+            <span className="block text-[1.05rem] font-semibold text-brand-navy">
               Clínica de Olhos
             </span>
-            <span className="block text-base font-extrabold text-brand-green-dark tracking-tight -mt-0.5">
+            <span className="block text-[1.05rem] font-semibold text-brand-green-dark -mt-0.5">
               Conceito
             </span>
           </a>

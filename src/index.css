@@ -2,15 +2,17 @@
 
 @theme {
   --font-sans: "Manrope", "Inter", system-ui, sans-serif;
+  --font-display: "Fraunces", "Georgia", serif;
 
   --color-brand-green: #139b63;
   --color-brand-green-dark: #087f5b;
   --color-brand-turquoise: #19bfa5;
   --color-brand-blue: #238fb7;
   --color-brand-navy: #173747;
-  --color-brand-bg: #f5f8f7;
-  --color-brand-bg-mint: #eaf7f1;
-  --color-brand-text: #243b36;
+  --color-brand-bg: #f6f8f7;
+  --color-brand-bg-mint: #eaf5f0;
+  --color-brand-text: #23342f;
+  --color-brand-line: #17374714;
 }
 
 html {
@@ -48,11 +50,70 @@ body {
   border-radius: 4px;
 }
 
-/* Arcos decorativos discretos, inspirados na identidade da marca */
+/* Tipografia de título — face serifada com peso editorial, usada com moderação */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Rótulo curto em versalete, usado como "olho" acima dos títulos de seção */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-green-dark);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.375rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+/*
+ * Moldura fotográfica com gradação de cor unificada: aplica um leve
+ * "duotone" na paleta da marca sobre as fotografias de referência, para
+ * que imagens de origens diferentes leiam como uma mesma linguagem
+ * visual, em vez de fotos de banco soltas dentro do layout.
+ */
+.photo-frame {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.photo-frame img {
+  filter: saturate(0.92) contrast(1.03);
+}
+
+.photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    155deg,
+    rgba(8, 40, 42, 0.32) 0%,
+    rgba(19, 155, 99, 0.12) 45%,
+    rgba(35, 143, 183, 0.08) 100%
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Arcos decorativos discretos, inspirados no formato circular da íris/pupila */
 .deco-arc {
   position: absolute;
   border-radius: 9999px;
   border-style: solid;
   pointer-events: none;
 }
-

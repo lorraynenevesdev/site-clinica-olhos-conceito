@@ -8,7 +8,10 @@ export default function Faq() {
   return (
     <section id="duvidas" className="py-14 md:py-20 bg-brand-bg">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy text-center tracking-tight">
+        <div className="flex justify-center">
+          <span className="eyebrow">Dúvidas</span>
+        </div>
+        <h2 className="font-display mt-3 text-2xl sm:text-3xl md:text-4xl text-brand-navy text-center">
           Perguntas frequentes
         </h2>
 

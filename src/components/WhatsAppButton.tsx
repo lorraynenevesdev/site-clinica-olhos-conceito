@@ -14,7 +14,7 @@ const variantClasses: Record<NonNullable<Props["variant"]>, string> = {
   primary:
     "bg-brand-green-dark text-white hover:bg-brand-green shadow-sm shadow-brand-green-dark/20",
   secondary:
-    "bg-white text-brand-navy border border-brand-navy/15 hover:border-brand-navy/30 hover:bg-brand-bg",
+    "bg-brand-bg-mint text-brand-navy border border-brand-navy/10 hover:border-brand-green-dark/30 hover:bg-brand-bg-mint/70",
   onDark: "bg-white text-brand-green-dark hover:bg-brand-bg",
 };
 

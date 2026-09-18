@@ -8,7 +8,7 @@ export default function Reviews() {
     <section id="avaliacoes" className="py-16 md:py-24 bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center max-w-xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-brand-navy">
             O que dizem sobre a clínica
           </h2>
           <div className="mt-4 flex items-center justify-center gap-2 text-brand-navy">

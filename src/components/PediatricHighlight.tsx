@@ -16,7 +16,7 @@ export default function PediatricHighlight() {
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden order-2 md:order-1">
+          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden order-2 md:order-1 photo-frame">
             <img
               src={pediatricoFoto}
               alt="Atendimento oftalmológico infantil (imagem ilustrativa)"
@@ -26,10 +26,8 @@ export default function PediatricHighlight() {
           </div>
 
           <div className="order-1 md:order-2">
-            <p className="text-sm font-semibold uppercase tracking-wide text-brand-green-dark mb-3">
-              Oftalmologia pediátrica
-            </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight max-w-md">
+            <span className="eyebrow">Oftalmologia pediátrica</span>
+            <h2 className="font-display mt-3 text-2xl sm:text-3xl md:text-4xl text-brand-navy max-w-md">
               Um olhar atento para os pequenos.
             </h2>
             <p className="mt-4 text-base text-brand-text/90 leading-relaxed max-w-md">

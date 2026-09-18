@@ -9,9 +9,14 @@ export default function Location() {
     <section id="localizacao" className="py-14 md:py-20 bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="rounded-3xl border border-brand-navy/10 bg-brand-bg p-6 sm:p-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight text-center">
-            Localização
-          </h2>
+          <div className="text-center">
+            <div className="flex justify-center">
+              <span className="eyebrow">Como chegar</span>
+            </div>
+            <h2 className="font-display mt-3 text-2xl sm:text-3xl md:text-4xl text-brand-navy">
+              Localização
+            </h2>
+          </div>
 
           {confirmadas.length === 0 ? (
             <div className="mt-6 text-center max-w-lg mx-auto">
@@ -49,7 +54,7 @@ export default function Location() {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-lg font-bold text-brand-navy flex items-center gap-2">
+                    <h3 className="font-display text-lg text-brand-navy flex items-center gap-2">
                       <MapPin className="h-5 w-5 text-brand-green-dark shrink-0" aria-hidden="true" />
                       {unidade.nome}
                     </h3>

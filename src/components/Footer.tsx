@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
         <div className="grid sm:grid-cols-3 gap-8">
           <div>
-            <p className="text-lg font-extrabold text-brand-navy">
+            <p className="font-display text-lg text-brand-navy">
               {clinicInfo.nome}
             </p>
             <p className="mt-2 text-sm text-brand-text/70">
