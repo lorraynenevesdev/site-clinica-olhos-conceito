@@ -6,9 +6,9 @@ export default function Location() {
   const confirmadas = unidades.filter((u) => u.confirmada);
 
   return (
-    <section id="localizacao" className="py-20 md:py-28 bg-white">
+    <section id="localizacao" className="py-20 md:py-28 bg-brand-bg">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="rounded-3xl border border-brand-navy/10 bg-brand-bg p-7 sm:p-12">
+        <div>
           <div className="text-center">
             <div className="flex justify-center">
               <span className="eyebrow">Como chegar</span>

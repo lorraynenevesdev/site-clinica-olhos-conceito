@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 pt-24 md:pt-28 pb-10 md:pb-14">
         <div className="grid md:grid-cols-2 md:min-h-[640px] items-stretch overflow-hidden rounded-3xl border border-brand-navy/10 bg-brand-bg">
           {/* No mobile a imagem vem depois do texto; no desktop fica à esquerda */}
-          <div className="order-2 md:order-1 relative aspect-[4/3] md:aspect-auto photo-frame">
+          <div className="order-2 md:order-1 relative aspect-[4/3] md:aspect-auto photo-frame hero-photo">
             <img
               src={equipamentoFoto}
               alt="Equipamento de exame oftalmológico (imagem ilustrativa)"

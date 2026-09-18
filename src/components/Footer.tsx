@@ -1,6 +1,5 @@
 import { MapPin, Phone } from "lucide-react";
-import { clinicInfo, instagram, unidades, whatsapp } from "../config/clinic";
-import WhatsAppButton from "./WhatsAppButton";
+import { clinicInfo, instagram, unidades } from "../config/clinic";
 import SocialLinks from "./SocialLinks";
 import logo from "../assets/logo-conceito.png";
 
@@ -28,14 +27,6 @@ export default function Footer() {
             <p className="mt-2 text-sm text-brand-text/70">
               {clinicInfo.cidade}
             </p>
-            <div className="mt-4">
-              <WhatsAppButton
-                mensagem={whatsapp.mensagens.padrao}
-                className="!px-4 !py-2.5 text-sm"
-              >
-                Falar no WhatsApp
-              </WhatsAppButton>
-            </div>
           </div>
 
           <div>

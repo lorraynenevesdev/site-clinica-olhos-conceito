@@ -1,5 +1,6 @@
 import { atendimentos, exames } from "../config/clinic";
 import WhatsAppButton from "./WhatsAppButton";
+import Reveal from "./Reveal";
 import consultaFoto from "../assets/photos/consulta.webp";
 import pediatricoFoto from "../assets/photos/pediatrico.webp";
 import equipamentoFoto from "../assets/photos/equipamento.webp";
@@ -30,10 +31,11 @@ export default function Services() {
         </div>
 
         <div className="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {atendimentos.map((item) => (
-            <div
+          {atendimentos.map((item, i) => (
+            <Reveal
               key={item.id}
-              className="rounded-2xl bg-white border border-brand-navy/10 overflow-hidden flex flex-col"
+              delay={i * 90}
+              className="photo-zoom rounded-2xl bg-white border border-brand-navy/10 overflow-hidden flex flex-col hover:border-brand-navy/20 transition-colors"
             >
               <div className="relative h-48 photo-frame">
                 <img
@@ -62,7 +64,7 @@ export default function Services() {
                   Consultar atendimento
                 </WhatsAppButton>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 

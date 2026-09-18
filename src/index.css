@@ -96,6 +96,31 @@ body {
 
 .photo-frame img {
   filter: saturate(0.92) contrast(1.03);
+  transition: transform 800ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  will-change: transform;
+}
+
+/* Zoom suave quando o cartão que contém a foto recebe hover ou foco */
+.photo-zoom:hover .photo-frame img,
+.photo-zoom:focus-within .photo-frame img {
+  transform: scale(1.06);
+}
+
+/*
+ * Revelação ao rolar. O estado inicial é aplicado por JS (data-reveal),
+ * então sem JS todo o conteúdo continua visível.
+ */
+[data-reveal="hidden"] {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+[data-reveal="visible"] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 700ms cubic-bezier(0.2, 0.6, 0.2, 1),
+    transform 700ms cubic-bezier(0.2, 0.6, 0.2, 1);
 }
 
 .photo-frame::after {
@@ -110,6 +135,22 @@ body {
   );
   mix-blend-mode: multiply;
   pointer-events: none;
+}
+
+/* Entrada lenta da foto de abertura, para a composição não nascer estática */
+@keyframes hero-in {
+  from {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hero-photo img {
+  animation: hero-in 1600ms cubic-bezier(0.2, 0.6, 0.2, 1) both;
 }
 
 /* Arcos decorativos discretos, inspirados no formato circular da íris/pupila */

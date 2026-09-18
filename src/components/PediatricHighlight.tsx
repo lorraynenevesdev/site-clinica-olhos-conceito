@@ -1,6 +1,7 @@
 import WhatsAppButton from "./WhatsAppButton";
 import { whatsapp } from "../config/clinic";
 import pediatricoFoto from "../assets/photos/pediatrico.webp";
+import Reveal from "./Reveal";
 
 export default function PediatricHighlight() {
   return (
@@ -16,14 +17,16 @@ export default function PediatricHighlight() {
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden order-2 md:order-1 photo-frame">
-            <img
-              src={pediatricoFoto}
-              alt="Atendimento oftalmológico infantil (imagem ilustrativa)"
-              className="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
+          <Reveal className="order-2 md:order-1 photo-zoom">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden photo-frame">
+              <img
+                src={pediatricoFoto}
+                alt="Atendimento oftalmológico infantil (imagem ilustrativa)"
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
 
           <div className="order-1 md:order-2">
             <span className="eyebrow">Oftalmologia pediátrica</span>
