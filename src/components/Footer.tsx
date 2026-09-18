@@ -2,6 +2,7 @@ import { MapPin, Phone } from "lucide-react";
 import { clinicInfo, instagram, unidades, whatsapp } from "../config/clinic";
 import WhatsAppButton from "./WhatsAppButton";
 import SocialLinks from "./SocialLinks";
+import logo from "../assets/logo-conceito.png";
 
 export default function Footer() {
   const confirmadas = unidades.filter((u) => u.confirmada);
@@ -11,9 +12,19 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
         <div className="grid sm:grid-cols-3 gap-8">
           <div>
-            <p className="font-display text-lg text-brand-navy">
-              {clinicInfo.nome}
-            </p>
+            <div className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt=""
+                aria-hidden="true"
+                className="h-12 w-auto shrink-0"
+                width={315}
+                height={375}
+              />
+              <p className="font-display text-lg text-brand-navy leading-snug">
+                {clinicInfo.nome}
+              </p>
+            </div>
             <p className="mt-2 text-sm text-brand-text/70">
               {clinicInfo.cidade}
             </p>
@@ -31,9 +42,14 @@ export default function Footer() {
             <p className="text-sm font-semibold text-brand-navy">
               Acompanhe a clínica
             </p>
-            <p className="mt-1 text-xs text-brand-text/60">
+            <a
+              href={instagram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-block text-xs text-brand-text/60 hover:text-brand-green-dark transition-colors"
+            >
               {instagram.handle}
-            </p>
+            </a>
             <SocialLinks className="mt-3" />
           </div>
 

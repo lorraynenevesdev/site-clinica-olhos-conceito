@@ -8,8 +8,10 @@
  */
 
 export const whatsapp = {
+  // Confirmado: é o link publicado pela própria clínica na bio do Instagram
+  // oficial (wa.me/5531995959990).
   numero: "5531995959990",
-  confirmado: false,
+  confirmado: true,
   mensagens: {
     padrao:
       "Olá! Acessei o site da Clínica de Olhos Conceito e gostaria de solicitar um agendamento.",
@@ -60,21 +62,12 @@ export type Unidade = {
 };
 
 /**
- * Unidades identificadas em referências. Mantidas com confirmada:false
- * até validação. Enquanto nenhuma estiver confirmada, a seção de
- * Localização exibe uma mensagem genérica pedindo contato com a equipe.
+ * Ambas as unidades são confirmadas: a bio do Instagram oficial da clínica
+ * lista as duas ("Conheça nossas unidades"). Telefones e horários seguem
+ * pendentes — o telefone (31) 3627-1219 aparece apenas na ficha do Google
+ * e ainda não foi validado pela clínica, por isso não é exibido.
  */
 export const unidades: Unidade[] = [
-  {
-    id: "florenca",
-    nome: "Unidade Florença",
-    endereco:
-      "Av. Ida Jubeline, 650 — Florença, Ribeirão das Neves/MG — CEP 33823-730",
-    telefone: "(31) 3627-1219",
-    horarioTexto: undefined,
-    confirmada: false,
-    fonte: "Google (ficha da empresa)",
-  },
   {
     id: "centro",
     nome: "Unidade Centro",
@@ -82,7 +75,17 @@ export const unidades: Unidade[] = [
     telefone: undefined,
     horarioTexto: undefined,
     confirmada: true,
-    fonte: "Instagram (@clinicasdeolhosconceito)",
+    fonte: "Instagram oficial (@clinicasdeolhosconceito)",
+  },
+  {
+    id: "florenca",
+    nome: "Unidade Florença",
+    endereco:
+      "Av. Ida Jubeline, 650 — Florença, Ribeirão das Neves/MG — CEP 33823-730",
+    telefone: undefined,
+    horarioTexto: undefined,
+    confirmada: true,
+    fonte: "Instagram oficial (@clinicasdeolhosconceito)",
   },
 ];
 
@@ -135,6 +138,23 @@ export const atendimentos: Atendimento[] = [
     mensagemWhatsapp: whatsapp.mensagens.exames,
     legendaFoto: "Imagem ilustrativa",
   },
+];
+
+/**
+ * Exames divulgados pela própria clínica em publicação no Instagram
+ * oficial. A disponibilidade pode mudar — o site orienta a confirmar com
+ * a recepção antes da visita.
+ */
+export const exames = [
+  "Topografia de córnea",
+  "Mapeamento de retina",
+  "Refração computadorizada",
+  "Gonioscopia",
+  "Pressão ocular",
+  "Fundo de olho",
+  "Biomicroscopia",
+  "Paquimetria",
+  "CDPO",
 ];
 
 export type MembroEquipe = {
@@ -215,7 +235,7 @@ export const faq = [
   {
     pergunta: "Quais exames são realizados?",
     resposta:
-      "A lista de exames disponíveis pode variar. Fale com a recepção pelo WhatsApp para confirmar quais exames são realizados atualmente.",
+      "Entre os exames divulgados pela clínica estão topografia de córnea, mapeamento de retina, refração computadorizada, gonioscopia, pressão ocular, fundo de olho, biomicroscopia, paquimetria e CDPO. A disponibilidade pode variar — confirme com a recepção pelo WhatsApp antes da sua visita.",
   },
   {
     pergunta: "A clínica atende por convênios?",
@@ -235,13 +255,12 @@ export const faq = [
  * visitantes do site.
  */
 export const pendencias = [
-  "Confirmar número de WhatsApp oficial (5531995959990).",
-  "Confirmar horário de funcionamento da unidade Centro.",
-  "Fornecer telefone da unidade Centro.",
-  "Confirmar se a unidade Florença (Google) também está ativa e, se sim, seu telefone fixo.",
+  "Confirmar horários de funcionamento das duas unidades (Centro e Florença).",
+  "Fornecer telefones das unidades — o número (31) 3627-1219 consta na ficha do Google e ainda não foi validado, por isso não é exibido no site.",
+  "Confirmar se a lista de exames divulgada no Instagram segue atual.",
   "Substituir as fotos de banco de imagens (abertura, cartões de atendimento e destaque infantil) por fotografias reais da clínica, equipamentos e equipe.",
   "Fornecer fotos reais do ambiente da clínica (seção 'A clínica').",
-  "Fornecer logo oficial em arquivo vetorial/alta resolução (se houver).",
+  "Fornecer a logo oficial em arquivo vetorial (SVG/AI) ou PNG em alta resolução — a versão usada hoje foi extraída da foto de perfil do Instagram e tem resolução limitada.",
   "Confirmar equipe médica atual (nomes, fotos, CRM/UF e RQE).",
   "Confirmar o link correto do perfil da clínica no Google e atualizar nota/total de avaliações periodicamente.",
   "Confirmar link do Facebook (se houver) para exibir no rodapé junto ao Instagram.",

@@ -23,17 +23,28 @@ npm run preview  # servir o build de produção localmente
 - Servidor de desenvolvimento (`vite`) iniciado e página verificada via HTTP (HTML renderizado corretamente).
 - Não foi possível realizar teste manual em navegador real (sem interface gráfica neste ambiente); recomenda-se conferir visualmente menu mobile, acordeão de dúvidas e âncoras antes da publicação.
 
+## Dados já confirmados
+
+Confirmados a partir do Instagram oficial da clínica (@clinicasdeolhosconceito):
+
+- WhatsApp **5531995959990** (link publicado na bio).
+- Duas unidades ativas: **Centro** (Rua Raimundo Nonato de Souza, 26) e **Florença** (Av. Ida Jubeline, 650).
+- Lista de exames divulgada pela clínica (topografia de córnea, mapeamento de retina, refração computadorizada, gonioscopia, pressão ocular, fundo de olho, biomicroscopia, paquimetria, CDPO).
+- Logo oficial (extraída da foto de perfil — ver pendências).
+- Avaliações reais aprovadas para publicação.
+
 ## Dados pendentes antes da publicação
 
 Ver lista completa e comentada em `src/config/clinic.ts` (constante `pendencias`). Resumo:
 
-1. Confirmar número de WhatsApp oficial.
-2. Confirmar unidade(s) ativa(s) e horários de funcionamento.
-3. Confirmar telefone fixo da unidade Florença.
-4. Fornecer fotos reais do ambiente da clínica (placeholders estão nos componentes `Hero` e `About`).
-5. Fornecer logo oficial (arquivo vetorial), se houver — atualmente o nome da clínica é exibido em texto no cabeçalho.
-6. Confirmar equipe médica atual (nomes, fotos, CRM/UF e RQE) para habilitar a seção Equipe.
-7. Fornecer avaliações reais aprovadas e link do perfil no Google para habilitar a seção Avaliações.
-8. Confirmar lista oficial de atendimentos/exames e convênios aceitos.
-9. Fornecer dados do responsável técnico e razão social para o rodapé.
-10. Criar página de política de privacidade antes de linkar no rodapé.
+1. Confirmar horários de funcionamento das duas unidades.
+2. Fornecer telefones das unidades (o número da ficha do Google ainda não foi validado e não é exibido).
+3. Confirmar se a lista de exames segue atual.
+4. Substituir as fotos de banco de imagens por fotografias reais da clínica.
+5. Fornecer fotos do ambiente da clínica (seção "A clínica" ainda usa placeholder).
+6. Fornecer a logo em vetor (SVG/AI) ou PNG em alta resolução — a atual veio de captura do Instagram.
+7. Confirmar equipe médica atual (nomes, fotos, CRM/UF e RQE) para habilitar a seção Equipe.
+8. Confirmar o link do perfil no Google e atualizar nota/total de avaliações.
+9. Confirmar convênios aceitos.
+10. Fornecer dados do responsável técnico e razão social para o rodapé.
+11. Criar página de política de privacidade antes de linkar no rodapé.

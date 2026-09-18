@@ -1,4 +1,4 @@
-import { atendimentos } from "../config/clinic";
+import { atendimentos, exames } from "../config/clinic";
 import WhatsAppButton from "./WhatsAppButton";
 import consultaFoto from "../assets/photos/consulta.webp";
 import pediatricoFoto from "../assets/photos/pediatrico.webp";
@@ -66,11 +66,25 @@ export default function Services() {
           ))}
         </div>
 
-        <p className="mt-8 text-xs sm:text-sm text-brand-text/55 max-w-2xl">
-          Os atendimentos acima são itens preliminares, a confirmar com a
-          clínica. Fale com nossa equipe para saber quais estão disponíveis
-          no momento.
-        </p>
+        <div className="mt-10 rounded-2xl border border-brand-navy/10 bg-brand-bg p-6 sm:p-8">
+          <h3 className="font-display text-lg sm:text-xl text-brand-navy">
+            Exames realizados na clínica
+          </h3>
+          <ul className="mt-5 flex flex-wrap gap-2">
+            {exames.map((exame) => (
+              <li
+                key={exame}
+                className="rounded-full bg-white border border-brand-navy/10 px-4 py-2 text-sm text-brand-text/90"
+              >
+                {exame}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-xs sm:text-sm text-brand-text/55 max-w-2xl">
+            A disponibilidade pode variar. Confirme com a recepção pelo
+            WhatsApp antes da sua visita.
+          </p>
+        </div>
       </div>
     </section>
   );
