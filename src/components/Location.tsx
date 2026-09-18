@@ -41,9 +41,9 @@ export default function Location() {
               {confirmadas.map((unidade) => (
                 <div
                   key={unidade.id}
-                  className="rounded-2xl bg-white border border-brand-navy/10 overflow-hidden"
+                  className="rounded-2xl bg-white border border-brand-navy/10 overflow-hidden flex flex-col"
                 >
-                  <div className="aspect-[4/3] w-full">
+                  <div className="aspect-[4/3] w-full shrink-0">
                     <iframe
                       title={`Mapa de localização — ${unidade.nome}`}
                       src={mapsEmbedUrl(unidade.endereco)}
@@ -53,7 +53,7 @@ export default function Location() {
                     />
                   </div>
 
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <h3 className="font-display text-lg text-brand-navy flex items-center gap-2">
                       <MapPin className="h-5 w-5 text-brand-green-dark shrink-0" aria-hidden="true" />
                       {unidade.nome}
@@ -63,9 +63,14 @@ export default function Location() {
                     </p>
 
                     {unidade.telefone && (
-                      <p className="mt-2 flex items-center gap-2 text-sm text-brand-text/90">
+                      <p className="mt-2 flex items-center gap-2 text-sm">
                         <Phone className="h-4 w-4 text-brand-green-dark shrink-0" aria-hidden="true" />
-                        {unidade.telefone}
+                        <a
+                          href={`tel:${unidade.telefone.replace(/\D/g, "")}`}
+                          className="text-brand-text/90 hover:text-brand-green-dark transition-colors"
+                        >
+                          {unidade.telefone}
+                        </a>
                       </p>
                     )}
 
@@ -76,14 +81,16 @@ export default function Location() {
                       </p>
                     )}
 
-                    <a
-                      href={mapsSearchUrl(unidade.endereco)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-5 inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-white bg-brand-blue hover:bg-brand-navy transition-colors min-h-11 w-full"
-                    >
-                      Como chegar
-                    </a>
+                    <div className="mt-auto pt-5">
+                      <a
+                        href={mapsSearchUrl(unidade.endereco)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-white bg-brand-blue hover:bg-brand-navy transition-colors min-h-11 w-full"
+                      >
+                        Como chegar
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}

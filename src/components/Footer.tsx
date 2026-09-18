@@ -18,8 +18,8 @@ export default function Footer() {
                 alt=""
                 aria-hidden="true"
                 className="h-12 w-auto shrink-0"
-                width={315}
-                height={375}
+                width={430}
+                height={512}
               />
               <p className="font-display text-lg text-brand-navy leading-snug">
                 {clinicInfo.nome}
@@ -73,7 +73,12 @@ export default function Footer() {
                     {u.telefone && (
                       <span className="flex items-center gap-2 mt-1">
                         <Phone className="h-4 w-4 shrink-0 text-brand-green-dark" aria-hidden="true" />
-                        {u.telefone}
+                        <a
+                          href={`tel:${u.telefone.replace(/\D/g, "")}`}
+                          className="hover:text-brand-green-dark transition-colors"
+                        >
+                          {u.telefone}
+                        </a>
                       </span>
                     )}
                   </li>

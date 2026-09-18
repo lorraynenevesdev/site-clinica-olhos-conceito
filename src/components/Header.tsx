@@ -23,8 +23,8 @@ export default function Header() {
               src={logo}
               alt="Clínica de Olhos Conceito"
               className="h-11 w-auto shrink-0"
-              width={315}
-              height={375}
+              width={430}
+              height={512}
             />
             <span className="leading-none font-display">
               <span className="block text-[1.05rem] font-semibold text-brand-navy">

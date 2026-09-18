@@ -63,9 +63,8 @@ export type Unidade = {
 
 /**
  * Ambas as unidades são confirmadas: a bio do Instagram oficial da clínica
- * lista as duas ("Conheça nossas unidades"). Telefones e horários seguem
- * pendentes — o telefone (31) 3627-1219 aparece apenas na ficha do Google
- * e ainda não foi validado pela clínica, por isso não é exibido.
+ * lista as duas ("Conheça nossas unidades"). O telefone da unidade
+ * Florença foi validado pela clínica. Os horários seguem pendentes.
  */
 export const unidades: Unidade[] = [
   {
@@ -82,7 +81,7 @@ export const unidades: Unidade[] = [
     nome: "Unidade Florença",
     endereco:
       "Av. Ida Jubeline, 650 — Florença, Ribeirão das Neves/MG — CEP 33823-730",
-    telefone: undefined,
+    telefone: "(31) 3627-1219",
     horarioTexto: undefined,
     confirmada: true,
     fonte: "Instagram oficial (@clinicasdeolhosconceito)",
@@ -256,11 +255,10 @@ export const faq = [
  */
 export const pendencias = [
   "Confirmar horários de funcionamento das duas unidades (Centro e Florença).",
-  "Fornecer telefones das unidades — o número (31) 3627-1219 consta na ficha do Google e ainda não foi validado, por isso não é exibido no site.",
+  "Fornecer o telefone da unidade Centro (hoje só a unidade Florença tem telefone publicado).",
   "Confirmar se a lista de exames divulgada no Instagram segue atual.",
   "Substituir as fotos de banco de imagens (abertura, cartões de atendimento e destaque infantil) por fotografias reais da clínica, equipamentos e equipe.",
   "Fornecer fotos reais do ambiente da clínica (seção 'A clínica').",
-  "Fornecer a logo oficial em arquivo vetorial (SVG/AI) ou PNG em alta resolução — a versão usada hoje foi extraída da foto de perfil do Instagram e tem resolução limitada.",
   "Confirmar equipe médica atual (nomes, fotos, CRM/UF e RQE).",
   "Confirmar o link correto do perfil da clínica no Google e atualizar nota/total de avaliações periodicamente.",
   "Confirmar link do Facebook (se houver) para exibir no rodapé junto ao Instagram.",
